@@ -1,0 +1,7 @@
+{
+  "host": "db",
+  "user": "root",
+  "password": "root",
+  "database": "nodedb",
+  "port": 3306
+}
