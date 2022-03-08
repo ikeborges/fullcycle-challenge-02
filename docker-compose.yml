@@ -10,8 +10,8 @@ services:
     tty: true
     volumes:
       - ./node:/usr/src/app
-    ports:
-      - "3000:3000"
+    expose:
+      - 3000
     networks:
       - app-network
     depends_on:
@@ -28,6 +28,15 @@ services:
       - MYSQL_DATABASE=nodedb
     volumes:
       - ./mysql:/var/lib/mysql
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    ports:
+      - "5000:80"
     networks:
       - app-network
 
