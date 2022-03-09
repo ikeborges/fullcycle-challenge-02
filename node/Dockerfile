@@ -1,5 +1,11 @@
 FROM node:latest
 
+WORKDIR /usr/app
+
+COPY ./package*.json .
+
+RUN npm install
+
 RUN apt update && \
     apt install -y curl
 
